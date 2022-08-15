@@ -1,19 +1,15 @@
 import unittest
-from my_solution.move_zeros import move_zeros
+from my_solution.likes_my import likes
 
 
-class TestMoveZero(unittest.TestCase):
+class TestLikes(unittest.TestCase):
 
-    def test_move_zero(self):
-        self.assertEqual(move_zeros(
-            [1, 2, 0, 1, 0, 1, 0, 3, 0, 1]),
-            [1, 2, 1, 1, 3, 1, 0, 0, 0, 0])
-        self.assertEqual(move_zeros(
-            [9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9]),
-            [9, 9, 1, 2, 1, 1, 3, 1, 9, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
-        self.assertEqual(move_zeros([0, 0]), [0, 0])
-        self.assertEqual(move_zeros([0]), [0])
-        self.assertEqual(move_zeros([]), [])
+    def test_likes(self):
+        self.assertEqual(likes([]), 'no one likes this')
+        self.assertEqual(likes(['Peter']), 'Peter likes this')
+        self.assertEqual(likes(['Jacob', 'Alex']), 'Jacob and Alex like this')
+        self.assertEqual(likes(['Max', 'John', 'Mark']), 'Max, John and Mark like this')
+        self.assertEqual(likes(['Alex', 'Jacob', 'Mark', 'Max']), 'Alex, Jacob and 2 others like this')
 
 
 if __name__ == '__main__':
