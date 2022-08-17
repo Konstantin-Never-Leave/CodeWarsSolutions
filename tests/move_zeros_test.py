@@ -1,5 +1,5 @@
 import unittest
-from my_solution.move_zeros import move_zeros
+from my_solution.move_zeros_my import move_zeros
 
 
 class TestMoveZero(unittest.TestCase):
